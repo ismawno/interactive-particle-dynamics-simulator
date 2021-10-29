@@ -1,0 +1,5 @@
+#!/bin/sh
+
+APPDIR=$(readlink -f "$0")
+APPDIR=$(dirname "$APPDIR")
+java -Xms64m -Xmx512m -Djna.nosys=true -Djava.library.path="$APPDIR:$APPDIR/lib" -cp "$APPDIR:$APPDIR/lib/spdsim2D.jar:$APPDIR/lib/core.jar:$APPDIR/lib/jogl-all.jar:$APPDIR/lib/gluegen-rt.jar:$APPDIR/lib/jogl-all-natives-linux-i586.jar:$APPDIR/lib/gluegen-rt-natives-linux-i586.jar:$APPDIR/lib/Tensors.jar:$APPDIR/lib/core.jar:$APPDIR/lib/SPDSim.jar:$APPDIR/lib/core.jar:$APPDIR/lib/controlP5.jar:$APPDIR/lib/CheckBoxes.jar:$APPDIR/lib/core.jar:$APPDIR/lib/grafica.jar" spdsim2D "$@"
